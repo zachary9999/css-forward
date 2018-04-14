@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title></title>
+    <style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    section {
+        min-width: 600px;
+        height: 300px;
+        background: #FFFFCC;
+        margin-bottom: 15px;
+        color: #fff;
+        line-height: 300px;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .left {
+        width: 150px;
+        background: #CC99FF;
+    }
+
+    .right {
+        width: 150px;
+        background: #6699FF;
+    }
+
+    .center {
+        background: #FF66FF;
+    }
+    /*
+	**  1.圣杯布局  **
+	*/
+
+    .grail {
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+
+    .grail .center {
+        width: 100%;
+        float: left;
+        position: relative;
+    }
+
+    .grail .left {
+        margin-left: -100%;
+        right: 150px;
+        position: relative;
+        float: left;
+    }
+
+    .grail .right {
+        float: left;
+        margin-right: -150px;
+    }
+    /*
+	**  2.双飞翼布局  **
+	*/
+
+    .doublewing {
+        height: 300px;
+    }
+
+    .doublewing .center-box {
+        width: 100%;
+        float: left;
+    }
+
+    .doublewing .left {
+        width: 150px;
+        float: left;
+        margin-left: -100%;
+        /*相对于包含快的宽度*/
+        /* position:relative;
+        left:-150px; */
+    }
+
+    .doublewing .right {
+        float: left;
+        margin-left: -150px;
+        /* position:relative;
+        right:-190px; */
+    }
+
+    .doublewing .center {
+        margin-left: 150px;
+        margin-right: 150px;
+    }
+    /*3.简单浮动*/
+
+    .simplefloat .left {
+        float: left;
+    }
+
+    .simplefloat .right {
+        float: right;
+    }
+    /*4.absolute*/
+
+    .absolute {
+        position: relative;
+    }
+
+    .absolute .center {
+        position: absolute;
+        top: 0;
+        left: 150px;
+        right: 150px;
+    }
+
+    .absolute .left {
+        position: absolute;
+        left: 0;
+    }
+
+    .absolute .right {
+        position: absolute;
+        right: 0;
+    }
+    /*flex*/
+
+    .flex {
+        display: flex;
+    }
+
+    .flex .center {
+        flex: 1;
+    }
+
+    .flex .left,
+    .flex .right {
+        /*width: 150px 默认有宽度*/
+    }
+    /*table*/
+
+    .table {
+        display: table;
+    }
+
+    .table .center {
+        display: table-cell;
+        width: 100%;
+    }
+
+    .table .left,
+    .table .right {
+        width: 150px;
+    }
+    /*gird*/
+    .grid{
+    	display: grid;
+    	grid-template-columns:150px auto 150px;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>fromHolygrailToGrid-layout</h1>
+    <!-- 圣杯布局 -->
+    <section class="grail">
+        <div class="center">center(圣杯布局)</div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </section>
+    <!-- 双飞翼布局 -->
+    <section class="doublewing">
+        <div class="center-box">
+            <div class="center">center(双飞翼布局)</div>
+        </div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </section>
+    <!-- 简单浮动 -->
+    <section class="simplefloat">
+        <div class="left">left</div>
+        <div class="right">right</div>
+        <div class="center">center(左右分别左右浮动)</div>
+    </section>
+    <!-- 绝对定位 -->
+    <section class="absolute">
+        <div class="left">left</div>
+        <div class="right">right</div>
+        <div class="center">center(absolute)</div>
+    </section>
+    <!-- flex -->
+    <section class="flex">
+        <div class="left">left</div>
+        <div class="center">center(flex)</div>
+        <div class="right">right</div>
+    </section>
+    <!-- table -->
+    <section class="table">
+        <div class="left">left</div>
+        <div class="center">center(table)</div>
+        <div class="right">right</div>
+    </section>
+    <!-- grid -->
+ <section class="grid">
+        <div class="left">left</div>
+        <div class="center">center(grid)</div>
+        <div class="right">right</div>
+    </section>
+	
+</body>
+
+</html>
